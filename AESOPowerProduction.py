@@ -145,6 +145,6 @@ dfConsol['SubType'].fillna(dfConsol['Type'], inplace=True)
 
 fig = px.sunburst(dfConsol, path=['Type', 'SubType', 'ASSET'], values='TNG', 
                   color_discrete_sequence=px.colors.qualitative.Vivid)
-fig.update_traces(hovertemplate = '<b>%{label}</b><br>Current Generation: %{TNG} MW',
+fig.update_traces(hovertemplate = '<b>%{label}</b><br>Current Generation: %{value} MW',
                   insidetextorientation='radial')
 st.plotly_chart(fig, use_container_width=True)
