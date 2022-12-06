@@ -149,5 +149,5 @@ fig.update_traces(hovertemplate = '<b>%{label}</b><br>Current Generation: %{valu
                   insidetextorientation='radial')
 fig.update_layout(width=800, height=800)
 st.markdown('# Current Alberta Electricity Generation')
-st.markdown('### *Total Current Generation: ' + str(sum(dfConsol['TNG'])) + 'MW')
+st.markdown('*Total Current Generation: ' + str(sum(dfConsol['TNG'])) + 'MW*')
 st.plotly_chart(fig, use_container_width=True)
