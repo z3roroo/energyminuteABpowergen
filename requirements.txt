@@ -1,2 +1,2 @@
 plotly
-beautifulsoup
+bs4
