@@ -147,4 +147,5 @@ fig = px.sunburst(dfConsol, path=['Type', 'SubType', 'ASSET'], values='TNG',
                   color_discrete_sequence=px.colors.qualitative.Vivid)
 fig.update_traces(hovertemplate = '<b>%{label}</b><br>Current Generation: %{value} MW',
                   insidetextorientation='radial')
+fig.update_layout(width=800, height=800)
 st.plotly_chart(fig, use_container_width=True)
