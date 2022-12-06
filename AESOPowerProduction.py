@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import numpy as np
 import plotly.express as px
 import streamlit as st
+st. set_page_config(layout="wide")
 
 url = 'http://ets.aeso.ca/ets_web/ip/Market/Reports/CSDReportServlet'
 data = requests.get(url).text
@@ -142,7 +143,8 @@ dfCoal[['MC', 'TNG', 'DCR']] = dfCoal[['MC', 'TNG', 'DCR']].apply(pd.to_numeric)
 dfConsol = pd.concat([dfGas, dfHydro, dfStorage, dfSolar, dfWind, dfBiomass, dfDual, dfCoal], ignore_index=True)
 dfConsol['SubType'].fillna(dfConsol['Type'], inplace=True)
 
-fig = px.sunburst(dfConsol, path=['Type', 'SubType', 'ASSET'], values='TNG', color_discrete_sequence=px.colors.qualitative.Vivid)
-fig.update_traces(insidetextorientation='radial')
-
+fig = px.sunburst(dfConsol, path=['Type', 'SubType', 'ASSET'], values='TNG', 
+                  color_discrete_sequence=px.colors.qualitative.Vivid)
+fig.update_traces(hovertemplate = '<b>%{label}</b><br>Current Generation: %{TNG} MW',
+                  insidetextorientation='radial')
 st.plotly_chart(fig, use_container_width=True)
