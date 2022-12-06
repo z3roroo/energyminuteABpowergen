@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 import numpy as np
 import plotly.express as px
 import streamlit as st
-st. set_page_config(layout="wide")
 
 url = 'http://ets.aeso.ca/ets_web/ip/Market/Reports/CSDReportServlet'
 data = requests.get(url).text
