@@ -147,7 +147,7 @@ fig = px.sunburst(dfConsol, path=['Type', 'SubType', 'ASSET'], values='TNG',
 fig.update_traces(hovertemplate = '<b>%{label}</b><br>Current Generation: %{value} MW',
                   insidetextorientation='radial')
 fig.update_layout(width=800, height=800)
-st.markdown('### Current Alberta Electricity Generation')
+st.markdown('### ENERGYminute Current Alberta Electricity Generation')
 st.markdown('#### By Type, Sub Type and individual generation facility')
 st.markdown('Total Current Generation: ' + str(sum(dfConsol['TNG'])) + 'MW')
 st.markdown('*Click on a power type to zoom to that level.  Clicking on the center of the ' +
