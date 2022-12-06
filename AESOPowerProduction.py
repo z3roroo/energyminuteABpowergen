@@ -149,7 +149,9 @@ fig.update_traces(hovertemplate = '<b>%{label}</b><br>Current Generation: %{valu
                   insidetextorientation='radial')
 fig.update_layout(width=800, height=800)
 st.markdown('### Current Alberta Electricity Generation')
+st.markdown('## By Type, Sub Type and individual generation facility')
 st.markdown('*Total Current Generation: ' + str(sum(dfConsol['TNG'])) + 'MW*')
 st.markdown('Click on a power type to zoom to that level.  Clicking on the center of the ' +
             'suburst will take you up one level.')
 st.plotly_chart(fig, use_container_width=True)
+st.markdown('All data from the Alberta Energy System Operator [(AESO)](http://ets.aeso.ca/ets_web/ip/Market/Reports/CSDReportServlet)')
