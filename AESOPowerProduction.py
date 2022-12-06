@@ -155,3 +155,4 @@ st.markdown('Click on a power type to zoom to that level.  Clicking on the cente
             'suburst will take you up one level.')
 st.plotly_chart(fig, use_container_width=True)
 st.markdown('All data from the Alberta Energy System Operator [(AESO)](http://ets.aeso.ca/ets_web/ip/Market/Reports/CSDReportServlet)')
+st.markdown('Inspiration for the chart from [Voltex](https://voltex.ca/dashboard/aeso/supply)')
