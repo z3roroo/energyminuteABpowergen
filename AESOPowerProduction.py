@@ -46,7 +46,7 @@ dfConsol['SubType'].fillna(dfConsol['Type'], inplace=True)
 
 fig = px.sunburst(dfConsol, path=['Type', 'SubType', 'ASSET'], values='TNG', 
                   color_discrete_sequence=px.colors.qualitative.Vivid,
-                  title='Total Current Generation: ' + str(sum(dfConsol['TNG'])) + 'MW')
+                  title='<b>Total Current Generation: ' + str(sum(dfConsol['TNG'])) + 'MW')
 fig.update_traces(hovertemplate = '<b>%{label}</b><br>Current Generation: %{value} MW',
                   insidetextorientation='radial')
 fig.update_layout(width=800, height=800)
