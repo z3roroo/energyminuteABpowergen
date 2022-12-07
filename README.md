@@ -1,4 +1,4 @@
-# Real-time Alberta Energy Generation Monitor
+# Real-time Alberta Electricity Generation Monitor
 
 Data compiled from the [Alberta Electric System Operator](http://ets.aeso.ca/ets_web/ip/Market/Reports/CSDReportServlet).
 
