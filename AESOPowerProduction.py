@@ -47,7 +47,7 @@ dfConsol['SubType'].fillna(dfConsol['Type'], inplace=True)
 fig = px.sunburst(dfConsol, path=['Type', 'SubType', 'ASSET'], values='TNG', 
                   color_discrete_sequence=px.colors.qualitative.Vivid,
                   title='<b>Total Current Generation: ' + str(sum(dfConsol['TNG'])) + 'MW')
-fig.update_traces(hovertemplate = '<b>%{label}</b><br>Current Generation: %{value} MW<br>%{percentParent} of Category<br>%{percentRoot} of Total',
+fig.update_traces(hovertemplate = '<b>%{label}</b><br>Current Generation: %{value} MW<br>%{percentParent:.2%} of {parent}<br>%{percentRoot:.2%} of Total',
                   insidetextorientation='radial')
 fig.update_layout(width=800, height=800)
 st.markdown('### ENERGYminute Current Alberta Electricity Generation')
