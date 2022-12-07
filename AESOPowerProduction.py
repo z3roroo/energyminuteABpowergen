@@ -45,13 +45,13 @@ dfConsol = pd.concat([termMapper[j]['df'] for j in termMapper], ignore_index=Tru
 dfConsol['SubType'].fillna(dfConsol['Type'], inplace=True)
 
 fig = px.sunburst(dfConsol, path=['Type', 'SubType', 'ASSET'], values='TNG', 
-                  color_discrete_sequence=px.colors.qualitative.Vivid)
+                  color_discrete_sequence=px.colors.qualitative.Vivid,
+                  title='Total Current Generation: ' + str(sum(dfConsol['TNG'])) + 'MW')
 fig.update_traces(hovertemplate = '<b>%{label}</b><br>Current Generation: %{value} MW',
                   insidetextorientation='radial')
 fig.update_layout(width=800, height=800)
 st.markdown('### ENERGYminute Current Alberta Electricity Generation')
 st.markdown('#### By type, subtype (where available) and individual generation facility')
-st.markdown('Total Current Generation: ' + str(sum(dfConsol['TNG'])) + 'MW')
 st.markdown('*Click on a power type to zoom to that level.  Clicking on the center of the ' +
             'suburst will take you up one level.*')
 st.plotly_chart(fig, use_container_width=True)
