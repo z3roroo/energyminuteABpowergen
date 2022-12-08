@@ -55,7 +55,7 @@ st.markdown('### ENERGYminute Current Alberta Electricity Generation')
 st.markdown('#### By type, subtype (where available) and individual generation facility')
 st.markdown('*Click on a power type to zoom to that level.  Clicking on the center of the ' +
             'suburst will take you up one level.*')
-st.markdown('*Data shown as at' + re.findall(r'Last[A-Za-z0-9\s\,:]+</td>', str(soup))[0].strip('</td>').strip('Last Update') + '*')
+st.markdown('*Data shown as at' + re.findall(r'Last[A-Za-z0-9\s\,:]+</td>', str(soup))[0].strip('</td>').strip('Last Update') + ' mountain time*')
 st.plotly_chart(fig, use_container_width=True)
 st.markdown('All data from the Alberta Energy System Operator [(AESO)](http://ets.aeso.ca/ets_web/ip/Market/Reports/CSDReportServlet)')
 st.markdown('Inspiration for the chart from [Voltex](https://voltex.ca/dashboard/aeso/supply)')
